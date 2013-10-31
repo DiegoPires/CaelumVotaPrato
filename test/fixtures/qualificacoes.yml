@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cliente_id: 
+  restaurante_id: 
+  nota: 
+  valor_gasto: 1.5
+
+two:
+  cliente_id: 
+  restaurante_id: 
+  nota: 
+  valor_gasto: 1.5

@@ -1,0 +1,17 @@
+<%= form_for Comentario.new, :html => { :class => 'form-inline' } do |f| %>
+  
+<dl class="dl-horizontal">
+
+  <dt>
+    <%= f.label :conteudo %>:
+  </dt>
+  <dd>  
+    <%= f.text_area :conteudo, class: "form-control", :rows => "2" %>
+  
+
+  <%= f.hidden_field :comentavel_id, value: comentavel.id %>
+  <%= f.hidden_field :comentavel_type, vale: comentavel.class %>
+  
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  </dd>
+<% end %>

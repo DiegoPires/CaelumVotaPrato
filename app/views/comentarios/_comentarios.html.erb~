@@ -1,0 +1,15 @@
+<div id="comentarios">
+  <p id="notice"><%= notice %></p>
+  <h3>Comentarios</h3>
+  <% if comentarios.empty? %>
+    Nada
+  <% else %>
+    <table class="table table-striped">
+      <tr>
+  	<th>Comentario</th>
+	<th></th>
+      </tr>
+    <%= render comentarios %> 
+    </table>
+  <% end %>
+</div>

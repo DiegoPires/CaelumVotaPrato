@@ -1,0 +1,46 @@
+<%- model_class = Restaurante -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<%= form_tag("/restaurantes", method: "get", class: "form-horizontal") do %>
+  
+  <div class="control-group">
+    <%= label_tag(:nome, "Nome:", class: "control-label") %>
+    <div class="controls">
+    <%= text_field_tag(:nome) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <%= submit_tag("Buscar", class: "btn") %>
+      <%= link_to "Novo", { action: "new" }, class: "btn"  %>
+    </div>
+  </div>
+
+
+<% end %>
+<hr>
+<table class="table table-striped">
+  <tr>
+    
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Especialidade</th>
+    <td>&nbsp;</td>
+  </tr>
+  <% @restaurantes.each do |t| %>
+  <tr>
+    <td><%= link_to t.nome, action: 'show', id: t %>
+    <td><%= t.endereco %></td>
+    <td><%= t.especialidade %></td>
+
+    <td><%= link_to "Editar", { action: "edit", id: t}, { class: 'btn btn-mini' } %>
+    <%= link_to "Excluir", { action: "destroy", id: t}, { method: "delete", class: 'btn btn-danger btn-mini' } %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+    

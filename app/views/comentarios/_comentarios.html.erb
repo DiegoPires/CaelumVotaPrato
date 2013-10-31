@@ -1,0 +1,12 @@
+<div id="comentarios">
+  <p id="notice"><%= notice %></p>
+  <h3>Comentarios</h3>
+  <% if comentarios.empty? %>
+    Nada
+  <% else %>
+    <table class="table table-striped">
+      
+    <%= render comentarios %> 
+    </table>
+  <% end %>
+</div>

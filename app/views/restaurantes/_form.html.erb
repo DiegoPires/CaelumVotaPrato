@@ -1,0 +1,38 @@
+
+<%=form_for @restaurante, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nome, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nome %> 
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :idade, :class => 'control-label' %>
+    <div class="controls">
+	<%= f.text_field :endereco %> 
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :idade, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :especialidade %> 
+    </div>
+  </div>
+  
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                restaurantes_path, :class => 'btn' %>
+  </div>
+<%end%>
+
+<% unless @restaurante.errors.empty? %>
+<ul>
+  <% @restaurante.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <%end%>
+</ul>
+<% end %>
+
+
+

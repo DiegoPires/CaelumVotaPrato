@@ -1,0 +1,14 @@
+<h1>Adicionar</h1>
+<%=form_for @restaurante do |f| %>
+  Nome: <%= f.text_field :nome %> <br>
+  End: <%= f.text_field :endereco %> <br>
+  Espe: <%= f.text_field :especialidade %> <br>
+  <%= f.submit %>
+
+  <ul>
+  <%= @restaurante.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <%end%>
+  </ul>
+
+<%end%>
