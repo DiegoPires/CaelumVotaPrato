@@ -1,4 +1,4 @@
-<%= form_for Comentario.new, :html => { :class => 'form-inline' } do |f| %>
+<%= form_for Comentario.new, remote: true, :html => { :class => 'form-inline' } do |f| %>
   
 <dl class="dl-horizontal">
 
@@ -14,4 +14,11 @@
   
   <%= f.submit nil, :class => 'btn btn-primary' %>
   </dd>
+<% end %>
+
+<% content_for :js do %>
+  $('form').bind('ajax:complete', function(xhr, result){
+    $('#comentarios').replaceWith(result.responseText);
+    $('textarea').val("");
+  });
 <% end %>

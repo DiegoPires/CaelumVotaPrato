@@ -81,6 +81,7 @@ class ComentariosController < ApplicationController
       #format.html { redirect_to comentarios_url }
       format.html { redirect_to controller: @comentario.comentavel_type.pluralize.downcase,  action: "show", id: @comentario.comentavel_id, notice: 'Comentario was successfully deleted.' }
       format.json { head :no_content }
+      format.js { head 200 }
     end
   end
 end

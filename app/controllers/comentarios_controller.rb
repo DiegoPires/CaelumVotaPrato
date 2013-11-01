@@ -45,9 +45,10 @@ class ComentariosController < ApplicationController
     respond_to do |format|
       if @comentario.save
         #format.html { redirect_to @comentario, notice: 'Comentario was successfully created.' }
-	flash[:notice] = "Comentario was successfully created"
-	format.html { redirect_to controller: @comentario.comentavel_type.pluralize.downcase,  action: "show", id: @comentario.comentavel_id }
-        format.json { render json: @comentario, status: :created, location: @comentario }
+	#flash[:notice] = "Comentario was successfully created"
+	#format.html { redirect_to controller: @comentario.comentavel_type.pluralize.downcase,  action: "show", id: @comentario.comentavel_id }
+        #format.json { render json: @comentario, status: :created, location: @comentario }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @comentario.errors, status: :unprocessable_entity }
@@ -81,6 +82,7 @@ class ComentariosController < ApplicationController
       #format.html { redirect_to comentarios_url }
       format.html { redirect_to controller: @comentario.comentavel_type.pluralize.downcase,  action: "show", id: @comentario.comentavel_id, notice: 'Comentario was successfully deleted.' }
       format.json { head :no_content }
+      format.js { head 200 }
     end
   end
 end

@@ -1,4 +1,10 @@
-<tr>
+<tr id="comentario_<%= comentario.id %>">
   <td><%= comentario.conteudo %></td>
-  <td><%= link_to '(remover)', comentario, :method => :delete %></td>
+  <td><%= link_to '(remover)', comentario, :method => :delete, :remote => true, :id => "remove_comentario_#{comentario.id}" %></td>
 </tr>
+
+<% content_for :js do %>
+  $('#remove_comentario_<%= comentario.id %>').bind('ajax:complete', function(){ 
+	$('#comentario_<%= comentario.id %>').remove();
+  });
+ <% end %>

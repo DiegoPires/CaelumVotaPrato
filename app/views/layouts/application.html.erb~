@@ -83,7 +83,7 @@
               <ul class="nav">
                 <li><%= link_to "Restaurantes", controller: "restaurantes" %></a></li>
                 <li><%= link_to "Cliente", controller: "clientes" %></li>
-                <li><%= link_to "Qualifica;óes", controller: "qualificacoes" %></li>
+                <li><%= link_to "Qualificações", controller: "qualificacoes" %></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -107,10 +107,8 @@
       </div>
     </div>
 
-
-      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    
-   
-
+    <script type='text/javascript'>
+      <%= yield :js %>
+    </script>
 </body>
 </html>
