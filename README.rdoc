@@ -1,3 +1,3 @@
 == README
 
-App criado no curso da Caelum RR-71
+App criado no curso RR 75 da Caelum: “Curso desenvolvimento ágil para web com Ruby on Rails 3"
